@@ -6,7 +6,7 @@ from asynctest import patch, CoroutineMock
 import pytest
 
 import gdax
-from tests.helpers import AsyncContextManagerMock, \
+from helpers import AsyncContextManagerMock, \
     AsyncContextManagerMockPagination, generate_id
 
 

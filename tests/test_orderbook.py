@@ -11,8 +11,7 @@ import gdax
 import gdax.orderbook
 import gdax.utils
 
-from tests.helpers import AsyncContextManagerMock, generate_id
-
+from helpers import AsyncContextManagerMock, generate_id
 
 id1 = generate_id()
 id2 = generate_id()
