@@ -271,10 +271,14 @@ class Trader(object):
                                    'executed_value', 'funds',
                                    'specified_funds'})
 
-    async def get_orders(self):
+    async def get_orders(self, status, product_id=''):
         assert self.authenticated
+        params = {}
+        params['status'] = status
+        if product_id:
+            params['product_id'] = product_id or self.product_id
         return await self._get(
-            '/orders', pagination=True,
+            '/orders', params=params, pagination=True,
             decimal_return_fields={'price', 'size', 'fill_fees', 'filled_size',
                                    'executed_value', 'funds',
                                    'specified_funds'})
